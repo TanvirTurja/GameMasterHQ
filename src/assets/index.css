@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+  .body{
+    margin: 0;
+    padding: 0;
+   
+    overflow: hidden;
+    
+   
+  }
+
+  .body dark-mode{
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+
+ 
+  .animation-container {
+    /* background-color: aquamarine; */
+    /* border: #1a1a1a solid 1px; */
+    
+    position: absolute;
+    top: 10vh;
+    left: 80vh;
+    right: 0;
+    bottom: 50vh;
+    z-index: 1;
+    
+    
+  }
+  
+  .animation-container span {
+    position: absolute;
+    display: block;
+    font-size: 18px;
+    font-family: 'Helvetica';
+    /* text-shadow: 0 0 1px white; */
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
+    z-index: 1;
+    opacity: 0;
+    top: 0;
+    will-change: transform, opacity;
+    animation-timing-function: ease-out;
+    animation-name: move;
+  }
+
+  
+  
+  @keyframes move {
+    0% {
+      opacity: 0;
+      top: 100%;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      transform: none;
+    }
+  }

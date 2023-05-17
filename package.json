@@ -1,5 +1,5 @@
 {
-  "name": "denis-vue-js",
+  "name": "article-summarizer",
   "version": "0.1.0",
   "scripts": {
     "dev": "vite --host",
@@ -16,12 +16,10 @@
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
     "jwt-decode": "^3.1.2",
-    "meilisearch": "^0.25.1",
     "moment": "^2.29.3",
     "sweetalert": "^2.1.2",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15",
-    "vue3-date-time-picker": "^2.4.2",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
