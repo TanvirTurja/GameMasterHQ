@@ -3,11 +3,11 @@
      <!-- body -->
      <body>
       <!-- url -->
-      <section class="text-gray-600 body-font">
+      <section class="text-gray-600 body-font dark:bg-gray-600 mb-10">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Article Summarizer</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Using the effective online application Article Summarizer, users can rapidly and effectively summarize lengthy articles. </p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mx-auto leading-relaxed xl:mb-4 text-gray-900 dark:text-gray-300">Article Summarizer</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-gray-900 dark:text-gray-300">Using the effective online application Article Summarizer, users can rapidly and effectively summarize lengthy articles. </p>
     </div>
       <form @submit.prevent="storeUrl">
     <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
@@ -34,6 +34,12 @@
       
     </div>
   </div>
+  <div v-show=" this.showloading == true ">
+    <div id="loading" class="loading-container">
+    <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
+  </div>
+
+  </div>
 </section>
 
 
@@ -57,7 +63,8 @@ export default{
     return {
        url :'',
        apiKey : import.meta.env.VITE_API_KEY,
-        summary : ''
+        summary : '',
+        showloading : false
 
     }
   },
@@ -71,9 +78,13 @@ export default{
   methods: {
      storeUrl(){
         this.getSummary()
+        
+
        
       },
       async getSummary(){
+        
+        this.showloading = true
 
         try {
           
@@ -90,6 +101,7 @@ export default{
 
         console.log(response.data)
         this.summary = response.data.summary
+        this.showloading = false
           
         } catch (error) {
           console.error(error)
@@ -107,6 +119,13 @@ export default{
 </script>
 
 <style scoped>
+
+.loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+    }
 
   .section {
   /* max-height: 600px; */
