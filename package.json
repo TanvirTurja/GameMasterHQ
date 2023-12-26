@@ -1,6 +1,6 @@
 {
-  "name": "article-summarizer",
-  "version": "0.1.0",
+  "name": "dictionary",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build"
