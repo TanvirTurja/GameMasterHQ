@@ -86,7 +86,7 @@ export default{
           
           const response = await axios.get('https://api.rawg.io/api/games', {
           params: {
-            key: '676890daad5a400396e198b8e1cb5029',
+            key: 'this.apiKey',
             search: this.text,
             page_size: 1,
              }
@@ -110,7 +110,7 @@ export default{
           const response = await axios.get('https://api.rawg.io/api/games', {
          params: {
           // Optional parameters
-          key: '676890daad5a400396e198b8e1cb5029',
+          key: 'this.apiKey',
           page: 1,
           page_size: 10}
         })
