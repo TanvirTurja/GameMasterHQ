@@ -109,11 +109,12 @@ export default{
       async getInfo(){
         try {
           
-          const response = await axios.get('https://rawg-video-games-database.p.rapidapi.com/games', {
-          headers: {
-           'X-RapidAPI-Key': this.apiKey,
-           'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
-          }
+          const response = await axios.get('https://api.rawg.io/api/games', {
+         params: {
+          // Optional parameters
+          key: 'this.apiKey',
+          page: 1,
+          page_size: 10}
         })
 
         console.log(response)
