@@ -81,12 +81,12 @@ export default{
 
         try {
           
-          const response = await axios.get('https://rawg-video-games-database.p.rapidapi.com/games/', {
+          const response = await axios.get('https://api.rawg.io/api/games/', {
           params: {
-            game_pk: this.text
+            games_pk: this.text
           },
           headers: {
-           'X-RapidAPI-Key': this.apiKey,
+           'key': this.apiKey,
            'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
           }
         })
