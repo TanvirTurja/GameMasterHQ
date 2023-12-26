@@ -84,14 +84,12 @@ export default{
 
         try {
           
-          const response = await axios.get('https://rawg-video-games-database.p.rapidapi.com/search', {
+          const response = await axios.get('https://api.rawg.io/api/games', {
           params: {
-            search: this.text
-          },
-          headers: {
-           'key': this.apiKey,
-           'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
-          }
+            key: '676890daad5a400396e198b8e1cb5029',
+            search: this.text,
+            page_size: 1, 
+             }
         })
 
         console.log(response)
