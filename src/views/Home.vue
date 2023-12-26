@@ -93,7 +93,7 @@ export default{
         })
 
         console.log(response)
-        this.summary = response.data.summary
+        this.summary = response.data.results[0]
         this.showloading = false
           
         } catch (error) {
