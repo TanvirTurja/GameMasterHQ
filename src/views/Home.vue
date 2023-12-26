@@ -64,6 +64,9 @@ export default{
      
     }
   },
+  created() {
+    this.getInfo()
+  },
    computed: {
      
     },
@@ -102,7 +105,25 @@ export default{
        
 
 
-      }
+      },
+      async getInfo(){
+        try {
+          
+          const response = await axios.get('https://rawg-video-games-database.p.rapidapi.com/games', {
+          headers: {
+           'key': this.apiKey,
+           'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com'
+          }
+        })
+
+        console.log(response)
+       
+        } catch (error) {
+          console.error(error)
+          
+        }
+
+       }
       
 
     
