@@ -88,7 +88,7 @@ export default{
           params: {
             key: '676890daad5a400396e198b8e1cb5029',
             search: this.text,
-            page_size: 1, 
+            page_size: 1,
              }
         })
 
