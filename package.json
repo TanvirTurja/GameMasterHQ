@@ -1,5 +1,5 @@
 {
-  "name": "dictionary",
+  "name": "gamemasterhq",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite --host",

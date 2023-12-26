@@ -87,9 +87,9 @@
                     </filter>
                     </defs>
             </svg> -->
-                  <span class="ml-3 text-xl">Dictionary</span>
+                  <span class="ml-3 text-xl">GameMasterHQ</span>
                 </a>
-                <p class="text-sm text-gray-600 dark:text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 2023 Dictionary
+                <p class="text-sm text-gray-600 dark:text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 2023 GameMasterHQ
                   <!-- —
                   <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 ml-1" target="_blank">@knyttneve</a> -->
                 </p>
