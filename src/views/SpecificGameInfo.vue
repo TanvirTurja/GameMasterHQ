@@ -112,6 +112,7 @@ import axios from "axios";
         created(){
             this.getSummary()
             console.log(this.id)
+            console.log(this.summary)
         },
         data(){
             return{
