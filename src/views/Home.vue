@@ -7,7 +7,7 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mx-auto leading-relaxed xl:mb-4 text-gray-900 dark:text-gray-300">GameMasterHQ </h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-gray-900 dark:text-gray-300">djdkjfhdkjhd </p>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-gray-900 dark:text-gray-300">the ultimate destination for gamers seeking comprehensive information and resources across all gaming platforms. As a premier website dedicated to the world of gaming, GameMasterHQ offers a wealth of valuable content and features designed to enhance the gaming experience for enthusiasts of all levels. </p>
     </div>
     <form @submit.prevent="store">
     <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
