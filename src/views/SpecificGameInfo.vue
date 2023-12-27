@@ -116,7 +116,7 @@ import axios from "axios";
         },
         data(){
             return{
-                summary : '',
+                summary : {},
                 apiKey : import.meta.env.VITE_API_KEY,
             }
         },
@@ -126,7 +126,7 @@ import axios from "axios";
             try {
                 const response = await axios.get(`https://api.rawg.io/api/games/${this.id}?key=${this.apiKey}`)
                 summary = response.data
-                console.log(summary)
+                console.log(this.summary)
             } catch (error) {
                 console.log(error)
               
