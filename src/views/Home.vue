@@ -58,7 +58,6 @@ export default{
   data(){
     return {
        text :'',
-       apiKey : import.meta.env.VITE_API_KEY,
         summary : '',
         showloading : false
      
@@ -86,7 +85,7 @@ export default{
           
           const response = await axios.get('https://api.rawg.io/api/games', {
           params: {
-            key: 'this.apiKey',
+            key: import.meta.env.VITE_API_KEY,
             search: this.text,
             page_size: 1,
              }
@@ -110,7 +109,7 @@ export default{
           const response = await axios.get('https://api.rawg.io/api/games', {
          params: {
           // Optional parameters
-          key: 'this.apiKey',
+          key: import.meta.env.VITE_API_KEY,
           page: 1,
           page_size: 10}
         })

@@ -72,7 +72,7 @@ import axios from "axios";
         return{
         isDark,
         text :'',
-        apiKey : import.meta.env.VITE_API_KEY,
+        // apiKey : import.meta.env.VITE_API_KEY,
         summary : ''
        
         }
@@ -120,7 +120,7 @@ import axios from "axios";
     try {
       const response = await axios.get('https://api.rawg.io/api/games', {
         params: {
-          key: '676890daad5a400396e198b8e1cb5029',
+           key: import.meta.env.VITE_API_KEY,
           search: this.text,
           page_size: 1,
         }
