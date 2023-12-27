@@ -26,13 +26,6 @@
 
         },
 
-        created(){
-            console.log(this.summary)
-        
-
-            
-        },
-
 
         methods:{
             
