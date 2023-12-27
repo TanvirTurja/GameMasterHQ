@@ -114,9 +114,9 @@ import axios from "axios";
    
  },
   handlesearch(){
-    this.getGameInfor()
+    this.getGameInfo()
   },
-  async getGameInfor(){
+  async getGameInfo(){
     try {
       const response = await axios.get('https://api.rawg.io/api/games', {
         params: {
