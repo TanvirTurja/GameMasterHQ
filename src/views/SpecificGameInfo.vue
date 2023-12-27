@@ -1,7 +1,7 @@
 <template>
     <section>
          <div class="container px-5 py-24 mx-auto" >
-    <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+    <div class=" w-full mx-auto text-center">
 
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
