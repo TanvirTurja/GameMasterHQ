@@ -16,7 +16,7 @@
 <script>
     export default {
         created(){
-            console.log(this.summary)
+            console.log(this.$route.params.summary)
         },
         data(){
             return{
