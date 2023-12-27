@@ -128,7 +128,7 @@ import axios from "axios";
       // console.log(response)
       this.summary = response.data.results
 
-      this.$router.push({ name: 'SpecificGameInfo', params: { summary: this.summary } });
+      this.$router.push({ name: 'SpecificGameInfo', params: { summary: response.data.results } });
       
     } 
     catch (error) {
