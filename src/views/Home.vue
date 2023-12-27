@@ -51,7 +51,7 @@
     <div class="flex flex-wrap ">
       <div class="xl:w-1/4 md:w-1/2 p-4" v-for="i in this.results " :key="i">
         <div class="bg-gray-100 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" v-bind:src="{{i.background_image}}" alt="content">
+          <img class="h-40 rounded w-full object-cover object-center mb-6" v-bind:src="i.background_image" alt="content">
           <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">{{i.released}}</h3>
           <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{i.name}}</h2>
           <p class="leading-relaxed text-base" v-for="x in i.genres" :key="x" >{{x.name}}</p>
