@@ -2,7 +2,7 @@
     <section>
          <div class="container px-5 py-24 mx-auto" >
     <div class=" w-full mx-auto text-center">
-      <!-- <section class="text-gray-600 body-font overflow-hidden">
+      <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
       <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{this.summary.background_image}}">
@@ -83,15 +83,15 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
   
       
      
      
 
-      <p class="leading-relaxed text-lg">{{this.summary.name}}</p>
-     <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span>
+      <!-- <p class="leading-relaxed text-lg">{{this.summary.name}}</p>
+     <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span> -->
      
       
     </div>
