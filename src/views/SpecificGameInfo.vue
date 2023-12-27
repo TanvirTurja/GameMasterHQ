@@ -15,16 +15,12 @@
 
 <script>
     export default {
-        created(){
-            console.log(JSON.stringify(this.$route.params.summary))
-        },
-        data(){
-            return{
-               
-
-            }
-
-        },
+        props: {
+    summary: {
+      type: Object, // Set the appropriate type of your summary object
+      default: () => ({}), // Set a default value if needed
+    },
+  },
 
 
         methods:{
