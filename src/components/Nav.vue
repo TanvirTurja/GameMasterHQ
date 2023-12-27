@@ -9,10 +9,10 @@
           
             
           </a>
-          <form @submit.prevent="handlesearch">
+          <!-- <form @submit.prevent="handlesearch">
 
           <input type="text" placeholder="Search" v-model="text" @keyup.enter="handlesearch" class="px-4 py-2 border border-gray-300 rounded-lg ml-5 ">
-          </form>
+          </form> -->
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
            
             
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
     export default {
         
      data(){
@@ -71,9 +71,9 @@ import axios from "axios";
 
         return{
         isDark,
-        text :'',
-        apiKey : import.meta.env.VITE_API_KEY,
-        summary : ''
+        // text :'',
+        // apiKey : import.meta.env.VITE_API_KEY,
+        // summary : ''
        
         }
        
@@ -113,33 +113,33 @@ import axios from "axios";
 
    
  },
-  handlesearch(){
-    this.getGameInfo()
-  },
-  async getGameInfo(){
-    try {
-      const response = await axios.get('https://api.rawg.io/api/games', {
-        params: {
-          key: 'this.apiKey',
-          search: this.text,
-          page_size: 1,
-        }
-      })
-      console.log(response)
-      this.summary = response.data.results[0]
+  // handlesearch(){
+  //   this.getGameInfo()
+  // },
+  // async getGameInfo(){
+  //   try {
+  //     const response = await axios.get('https://api.rawg.io/api/games', {
+  //       params: {
+  //         key: 'this.apiKey',
+  //         search: this.text,
+  //         page_size: 1,
+  //       }
+  //     })
+  //     console.log(response)
+  //     this.summary = response.data.results[0]
 
-      this.$router.push({ name: 'SpecificGameInfo', params: { summary: this.summary } });
+  //     this.$router.push({ name: 'SpecificGameInfo', params: { summary: this.summary } });
       
-    } 
-    catch (error) {
-      console.error(error)
+  //   } 
+  //   catch (error) {
+  //     console.error(error)
       
-    }
+  //   }
 
 
 
 
-    },
+  //   },
     },
 
 
