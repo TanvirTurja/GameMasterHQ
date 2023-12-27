@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/game/:summary',
+    path: '/game/:id',
     name: 'SpecificGameInfo',
     component: SpecificGameInfo,
     props: true

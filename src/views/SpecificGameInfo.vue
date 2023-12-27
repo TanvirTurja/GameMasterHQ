@@ -16,11 +16,19 @@
 <script>
     export default {
         props: {
-    summary: {
+    id: {
       type: Object, // Set the appropriate type of your summary object
       default: () => ({}), // Set a default value if needed
     },
   },
+        data(){
+            return{
+                summary : this.id.summary
+            }
+        },
+        created(){
+            console.log(this.id)
+        },
 
 
         methods:{
