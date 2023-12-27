@@ -91,7 +91,7 @@ export default{
              }
         })
 
-        console.log(response)
+        // console.log(response)
         this.summary = response.data.results[0]
         this.showloading = false
           
@@ -114,7 +114,7 @@ export default{
           page_size: 10}
         })
 
-        console.log(response)
+        // console.log(response)
        
         } catch (error) {
           console.error(error)

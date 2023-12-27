@@ -31,6 +31,8 @@
         },
 
         created(){
+            console.log(this.summary)
+        
 
             
         },
