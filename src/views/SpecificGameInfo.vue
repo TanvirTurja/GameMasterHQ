@@ -112,7 +112,7 @@ import axios from "axios";
         created(){
             this.getSummary()
             console.log(this.id)
-            console.log(this.summary)
+            // console.log(this.summary)
         },
         data(){
             return{
@@ -122,6 +122,7 @@ import axios from "axios";
         },
         methods:{
            async getSummary(){
+            console.log('is this running-',this.id);
             try {
                 const response = await axios.get(`https://api.rawg.io/api/games/${this.id}?key=${this.apiKey}`)
                 summary = response.data.results
