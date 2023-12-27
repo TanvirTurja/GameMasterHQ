@@ -126,7 +126,7 @@ import axios from "axios";
         }
       })
       // console.log(response)
-      this.summary = response.data.results[0].slug
+      this.summary = response.data.results[0]
 
       this.$router.push({ name: 'SpecificGameInfo', params: { id: this.summary } });
       
