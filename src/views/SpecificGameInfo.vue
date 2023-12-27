@@ -2,13 +2,13 @@
     <section>
          <div class="container px-5 py-24 mx-auto" >
     <div class=" w-full mx-auto text-center">
-      <!-- <section class="text-gray-600 body-font overflow-hidden">
+      <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
-      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{this.summary.background_image}}">
+      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{summary.background_image}}">
       <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-        <h2 class="text-sm title-font text-gray-500 tracking-widest">{{this.summary.metacritic_platforms}}</h2>
-        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{this.summary.name}}</h1>
+        <h2 class="text-sm title-font text-gray-500 tracking-widest">{{summary.metacritic_platforms}}</h2>
+        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{summary.name}}</h1>
         <div class="flex mb-4">
           <span class="flex items-center">
             <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
@@ -83,14 +83,14 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
   
       
      
      
 
-      <p class="leading-relaxed text-lg">{{this.summary}}</p>
+      <!-- <p class="leading-relaxed text-lg">{{this.summary}}</p> -->
      <!-- <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span> -->
      
       
