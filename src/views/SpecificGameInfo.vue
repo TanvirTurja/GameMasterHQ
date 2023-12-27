@@ -125,7 +125,7 @@ import axios from "axios";
            
             try {
                 const response = await axios.get(`https://api.rawg.io/api/games/${this.id}?key=${this.apiKey}`)
-                summary = response.data
+                this.summary = response.data
                 console.log(this.summary)
             } catch (error) {
                 console.log(error)
