@@ -9,9 +9,9 @@
           
             
           </a>
-          <form @submit.prevent="handlesearch">
+          <form @submit.prevent="getGameInfo">
 
-          <input type="text" placeholder="Search" v-model="text" @keyup.enter="handlesearch" class="px-4 py-2 border border-gray-300 rounded-lg ml-5 ">
+          <input type="text" placeholder="Search" v-model="text" @keyup.enter="getGameInfo" class="px-4 py-2 border border-gray-300 rounded-lg ml-5 ">
           </form>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
            
@@ -113,9 +113,9 @@ import axios from "axios";
 
    
  },
-  handlesearch(){
-    this.getGameInfo()
-  },
+  // handlesearch(){
+  //   this.getGameInfo()
+  // },
   async getGameInfo(){
     try {
       const response = await axios.get('https://api.rawg.io/api/games', {
