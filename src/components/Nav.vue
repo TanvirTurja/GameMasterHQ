@@ -78,6 +78,7 @@ import axios from "axios";
         }
        
     },
+   
     methods:{
         
       toggleDarkMode(){
@@ -129,6 +130,7 @@ import axios from "axios";
       this.summary = response.data.results[0].slug
 
       this.$router.push({ name: 'SpecificGameInfo', params: { id: this.summary } });
+       this.text = '';
       
     } 
     catch (error) {
