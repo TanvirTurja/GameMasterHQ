@@ -90,7 +90,7 @@
      
      
 
-      <p class="leading-relaxed text-lg">{{this.summary}}</p>
+      <!-- <p class="leading-relaxed text-lg">{{this.summary}}</p> -->
      <!-- <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span> -->
      
       
@@ -122,11 +122,11 @@ import axios from "axios";
         },
         methods:{
            async getSummary(){
-            console.log('is this running-',this.id);
+           
             try {
                 const response = await axios.get(`https://api.rawg.io/api/games/${this.id}?key=${this.apiKey}`)
-                summary = response.data.results
-                console.log(this.summary)
+                summary = response.data
+                console.log(summary)
             } catch (error) {
                 console.log(error)
               
