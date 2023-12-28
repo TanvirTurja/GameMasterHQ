@@ -28,8 +28,46 @@
           <img class="h-40 rounded w-full object-cover object-center mb-6" v-bind:src="i.background_image" alt="content">
           <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">{{i.released}}</h3>
           <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{i.name}}</h2>
-          <p class="leading-relaxed text-base" v-for="x in i.genres" :key="x" >{{x.name}}</p>
+          <div class="flex justify-between ">
+            <div>
+
+            <label for="">Genres</label>
+            </div>
+            <div class="flex">
+
+          <p class="leading-relaxed text-base " v-for="(x,index) in i.genres" :key="index" > {{x.name}} <span v-if="index !== i.genres.length - 1">,</span> </p>
+            </div>
+          </div>
           <p class="leading-relaxed text-base">{{i.metacritic}}</p>
+          <div class="flex justify-between">
+            <div>
+
+            <label for="">Platforms</label>
+            </div>
+            <div class="flex gap-1">
+
+          <div class="flex " v-for="x in i.platforms" :key="x">
+            <img v-if="x.platform.name === 'PC'" src="@/assets/platforms/pc.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PlayStation 4'" src="@/assets/platforms/ps4.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'Xbox 360'" src="@/assets/platforms/xbox360.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'Nintendo Switch'" src="@/assets/platforms/nintendoswitch.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'Linux'" src="@/assets/platforms/linux.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PlayStation 3'" src="@/assets/platforms/ps3.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'Xbox One'" src="@/assets/platforms/xboxone.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PlayStation 5'" src="@/assets/platforms/ps5.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PlayStation 2'" src="@/assets/platforms/ps2.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PlayStation'" src="@/assets/platforms/ps1.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'macOS'" src="@/assets/platforms/mac0s.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'Android'" src="@/assets/platforms/android.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'IOS'" src="@/assets/platforms/ios.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PSVITA'" src="@/assets/platforms/psvita.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'XBox series X/s'" src="@/assets/platforms/xboxseriesxs.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+
+
+          </div>
+            </div>
+          </div>
+         
           
         </div>
       </div>
@@ -55,6 +93,11 @@ export default{
   data(){
     return {
        text :'',
+       platforms: [{
+          platform:{
+            name: ''
+          }
+        }],
       
         results : []
      
@@ -85,6 +128,7 @@ export default{
         })
 
         this.results = response.data.results
+
 
         console.log(this.results)
        
