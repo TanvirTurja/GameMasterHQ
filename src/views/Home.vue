@@ -22,12 +22,18 @@
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">New Popular Games </h1>
        
       </div>
-    <div class="flex flex-wrap ">
-      <div class="xl:w-1/4 md:w-1/2 p-4" v-for="i in this.results " :key="i">
-        <div class="bg-gray-100 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" v-bind:src="i.background_image" alt="content">
+   
+      <!--  card -->
+      
+    <div class="flex flex-wrap " >
+      <div class="xl:w-1/3 md:w-1/2 p-4  " v-for="i in this.results " :key="i">
+       <router-link :to="{ name: 'SpecificGameInfo', params: { id: i.id } }">
+        <div class="bg-gray-100  rounded-lg border-2">
+          <img class="h-60 rounded w-full object-cover object-center mb-6" v-bind:src="i.background_image" alt="content">
+          <section class="p-6">
+
           <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">{{i.released}}</h3>
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{i.name}}</h2>
+          <h2 class="text-xl text-gray-900 font-bold title-font mb-4">{{i.name}}</h2>
           <div class="flex justify-between ">
             <div>
 
@@ -38,7 +44,15 @@
           <p class="leading-relaxed text-base " v-for="(x,index) in i.genres" :key="index" > {{x.name}} <span v-if="index !== i.genres.length - 1">,</span> </p>
             </div>
           </div>
+          <div class="flex justify-between">
+            <div>
+              <label for="">Metacritic</label>
+            </div>
+            <div>
           <p class="leading-relaxed text-base">{{i.metacritic}}</p>
+
+            </div>
+          </div>
           <div class="flex justify-between">
             <div>
 
@@ -68,11 +82,14 @@
             </div>
           </div>
          
+          </section>
           
         </div>
+        </router-link>
       </div>
       
     </div>
+    <!-- card -->
   </div>
 </section>
 
