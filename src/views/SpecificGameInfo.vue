@@ -43,7 +43,36 @@
           <span class="title-font font-bold">Genres</span>
           <span class="ml-auto text-gray-900 text-sm" v-for="(i, index) in summary.genres" :key="index">{{i.name}} <span v-if="index !== summary.genres.length - 1">,</span></span>
         </div>
+
+        
+
+
        </div>
+       <div class="bg-gray-50 rounded flex justify-between p-3 w-full h-full items-center border mb-2">
+
+            <label for="">Platforms</label>
+           
+            
+
+          <div class="flex " v-for="x in summary.platforms" :key="x">
+            <img v-if="x.platform.name === 'PC'" src="@/assets/platforms/pc.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 4'" src="@/assets/platforms/ps4.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Xbox 360'" src="@/assets/platforms/xbox360.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Nintendo Switch'" src="@/assets/platforms/nintendoswitch.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Linux'" src="@/assets/platforms/linux.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 3'" src="@/assets/platforms/ps3.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Xbox One'" src="@/assets/platforms/xboxone.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 5'" src="@/assets/platforms/ps5.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 2'" src="@/assets/platforms/ps2.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation'" src="@/assets/platforms/ps1.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'macOS'" src="@/assets/platforms/macOs.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Android'" src="@/assets/platforms/android.svg"  class=" w-10 h-10 bg-black  border-2  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'iOS'" src="@/assets/platforms/ios.svg"  class=" w-10 h-10  border-2 bg-black border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PSVITA'" src="@/assets/platforms/psvita.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Xbox Series S/X'" src="@/assets/platforms/xboxseriesxs.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+
+            </div>
+          </div>
         <p v-html="summary.description" class="leading-relaxed"></p>  
           
     </div>
@@ -73,6 +102,30 @@
     <Modal :showModal="isModalOpen" :selectedImage="selectedImage" @close="closeModal" />
 </section>
   <!-- screenshots -->
+  <!-- trailer -->
+  <section class="text-gray-600 body-font" v-if="trailer[0]">
+  <div class="container px-5 py-2 mx-auto">
+    <div class="flex flex-col text-center w-full mb-5">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Trailer</h1>
+    </div> 
+    <div class="flex flex-wrap -m-4">
+      <div class="p-4 lg:w-1/2">
+        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+          <iframe
+            class="flex-shrink-0 rounded-lg w-full h-64 object-cover object-center sm:mb-0 mb-4"
+            width="640"
+            height="360"
+            :src="trailer[0].data.max"
+            frameborder="0"
+            allow="fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- trailer -->
 
 </section>
 </template>
@@ -102,6 +155,7 @@ import Modal from "@/components/Modal.vue";
             this.getSummary()
             console.log(this.id)
             this.getScreenshots()
+            this.getTrailer()
 
             // console.log(this.summary)
         },
@@ -111,7 +165,12 @@ import Modal from "@/components/Modal.vue";
                 apiKey : import.meta.env.VITE_API_KEY,
                 screenshots : [],
                 isModalOpen: false,
-                selectedImage: ''
+                selectedImage: '',
+                platforms: [{
+                     platform:{
+                     name: ''
+                   }
+        }],
             }
         },
         methods:{
@@ -144,6 +203,18 @@ import Modal from "@/components/Modal.vue";
     closeModal() {
       this.isModalOpen = false;
       this.selectedImage = '';
+    },
+
+    async getTrailer(){
+           
+            try {
+                const response = await axios.get(`https://api.rawg.io/api/games/${this.id}/movies?key=${this.apiKey}`)
+                this.trailer = response.data.results
+                console.log(this.trailer)
+            } catch (error) {
+                console.log(error)
+              
+            }
     }
 
 

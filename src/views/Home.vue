@@ -61,21 +61,21 @@
             <div class="flex gap-1">
 
           <div class="flex " v-for="x in i.platforms" :key="x">
-            <img v-if="x.platform.name === 'PC'" src="@/assets/platforms/pc.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'PlayStation 4'" src="@/assets/platforms/ps4.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'Xbox 360'" src="@/assets/platforms/xbox360.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'Nintendo Switch'" src="@/assets/platforms/nintendoswitch.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'Linux'" src="@/assets/platforms/linux.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'PlayStation 3'" src="@/assets/platforms/ps3.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'Xbox One'" src="@/assets/platforms/xboxone.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'PlayStation 5'" src="@/assets/platforms/ps5.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'PlayStation 2'" src="@/assets/platforms/ps2.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'PlayStation'" src="@/assets/platforms/ps1.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'macOS'" src="@/assets/platforms/mac0s.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'Android'" src="@/assets/platforms/android.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'IOS'" src="@/assets/platforms/ios.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'PSVITA'" src="@/assets/platforms/psvita.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
-            <img v-if="x.platform.name === 'XBox series X/s'" src="@/assets/platforms/xboxseriesxs.svg"  class=" w-8 h-8  border-2  border-black rounded-full">
+            <img v-if="x.platform.name === 'PC'" src="@/assets/platforms/pc.svg"  class=" w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 4'" src="@/assets/platforms/ps4.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Xbox 360'" src="@/assets/platforms/xbox360.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Nintendo Switch'" src="@/assets/platforms/nintendoswitch.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Linux'" src="@/assets/platforms/linux.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 3'" src="@/assets/platforms/ps3.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Xbox One'" src="@/assets/platforms/xboxone.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 5'" src="@/assets/platforms/ps5.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation 2'" src="@/assets/platforms/ps2.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PlayStation'" src="@/assets/platforms/ps1.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'macOS'" src="@/assets/platforms/macOs.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'Android'" src="@/assets/platforms/android.svg"  class=" w-10 h-10 bg-black  border-2  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'IOS'" src="@/assets/platforms/ios.svg"  class=" w-10 h-10  border-2 bg-black border-black rounded-4xl">
+            <img v-if="x.platform.name === 'PSVITA'" src="@/assets/platforms/psvita.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
+            <img v-if="x.platform.name === 'XBox series X/s'" src="@/assets/platforms/xboxseriesxs.svg"  class="w-10 h-10  border-2 bg-black  border-black rounded-4xl">
 
 
           </div>
