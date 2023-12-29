@@ -3,7 +3,7 @@
      <!-- body -->
      <body>
       <!-- url -->
-      <section class="text-gray-600 body-font dark:bg-gray-600 mb-10">
+      <section class="text-gray-600 body-font dark:bg-gray-600 ">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mx-auto leading-relaxed xl:mb-4 text-gray-900 dark:text-gray-300">GameMasterHQ </h1>
@@ -15,10 +15,10 @@
 
 
 
-<section class="text-gray-600 body-font">
+<section class="text-gray-600 body-font dark:bg-gray-600">
   <div class="container px-5 py-24 mx-auto">
   
-      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0 flex px-4">
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">New Popular Games </h1>
        
       </div>
@@ -87,12 +87,37 @@
         </div>
         </router-link>
       </div>
+ 
+
       
     </div>
     <!-- card -->
+    
   </div>
 </section>
+<section class="dark:bg-gray-600">
 
+ <div class="container flex justify-center   px-5 py-4 mx-auto">
+      <!-- Previous button -->
+      <button
+        v-if="currentPage > 1"
+        @click="getPreviousPage"
+        class="inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg"
+      >
+        Prev
+      </button>
+
+      <!-- Next button -->
+      <button
+        v-if="currentPage < totalPages"
+        @click="getNextPage"
+        class="ml-4 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+      >
+        Next
+      </button>
+    </div>
+
+</section>
 
      </body>
      <!-- body -->
@@ -116,7 +141,9 @@ export default{
           }
         }],
       
-        results : []
+        results : [],
+        currentPage: 1,
+        totalPages: null,
      
     }
   },
@@ -128,33 +155,53 @@ export default{
     },
  
   mounted() {
+    this.getInfo(this.currentPage);
    
   },
   methods: {
     
       
-      async getInfo(){
+      async getInfo(page){
         try {
           
           const response = await axios.get('https://api.rawg.io/api/games', {
          params: {
           // Optional parameters
           key: import.meta.env.VITE_API_KEY,
-          page: 1,
-          page_size: 10}
+          page: page,
+          page_size: 12}
         })
 
         this.results = response.data.results
+        this.totalPages = response.data.count / 10
+
+        this.currentPage = page;
+
 
 
         console.log(this.results)
+        console.log(this.totalPages)
        
         } catch (error) {
           console.error(error)
           
         }
 
-       }
+       },
+         async getNextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+        await this.getInfo(this.currentPage);
+      }
+    },
+
+    async getPreviousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+        await this.getInfo(this.currentPage);
+      }
+    },
+
       
 
     
